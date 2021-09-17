@@ -1512,6 +1512,8 @@ var Slim = (function () {
         text.classList.add(this.main.config.valueText);
         text.innerHTML = (optionObj.innerHTML && this.main.config.valuesUseText !== true ? optionObj.innerHTML : optionObj.text);
         value.appendChild(text);
+        var dataset = Object.assign({ backgroundColor: '' }, optionObj.data);
+        value.style.backgroundColor = dataset.backgroundColor;
         if (!optionObj.mandatory) {
             var deleteSpan = document.createElement('span');
             deleteSpan.classList.add(this.main.config.valueDelete);
